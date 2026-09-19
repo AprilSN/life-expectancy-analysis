@@ -1,0 +1,23 @@
+Life Expectancy Dataset Variable Description
+
+Country - the name of the country
+Continent - the continent the country lies on
+Region - the region the country lies in
+Infant_deaths - number of infant deaths per 1000 live births
+Under_five_deaths - number of deaths of children aged <5 per 1000 live births
+Adult_mortality - number of deaths aged 15-60 per 1000 population; calculated as the probability of dying between the ages 15 and 60 per year among a hypothetical cohort of 100 000 people from the given population
+Alcohol_consumption -  average alcohol consumption in liters per capita
+BMI - average body mass index of the country
+Hepatitis_B - percentage of Hepatitis B (HepB3) immunisation coverage among 1-year-olds
+Measles - percentage of Measles (MCV1) immunisation coverage among 1-year-olds
+Polio - percentage of Polio (Pol3) immunisation coverage among 1-year-olds
+Diphtheria - percentage of Diphtheria tetanus toxoid and pertussis (DTP3) immunisation coverage among 1-year-olds
+Incidents_HIV - incidents of HIV positivity per 1000 population aged 15-49
+GDP - GDP per capita in USD
+Population_mln - population in millions
+Thinness_ten_nineteen_years - percentage of children aged 10-19 with body mass index below 2 standard deviations below the median
+Thinness_five_nine_years - percentage of children aged 5-9 with body mass index below 2 standard deviations below the median
+Schooling - average number of years people aged 25+ had spent in formal education
+Economy_status_Developing - dummy variable indicating whether the country registered its status as developing with WTO
+Economy_status_Developed - dummy variable indicating whether the country registered its status as developed with WTO
+Life_expectancy - average life expectancy of the population 
