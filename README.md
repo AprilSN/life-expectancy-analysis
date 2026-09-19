@@ -42,6 +42,8 @@ Normality was violated for the developing-country subgroup (Shapiro-Wilk p = 8.4
 A multiple linear regression model was built using all 11 numeric health/economy/education predictors against life expectancy, then refined in two stages:
 
 1. **Multicollinearity check** — a pairwise scatterplot matrix and correlation matrix identified two highly correlated predictor pairs (Polio & Diphtheria immunisation, r = 0.96; the two child-thinness variables, r = 0.92). Variance Inflation Factors (VIF) confirmed this, and one variable from each pair was dropped.
+
+   ![Correlation matrix of predictor variables](images/correlation-matrix.png)
 2. **Backward elimination** — iteratively removing the least significant remaining predictor (by p-value) across seven refinement attempts, tracking adjusted R² at each step.
 
 **Final model:** all three remaining predictors were significant at p < 0.001:
@@ -61,6 +63,10 @@ Life_expectancy = 50.77 + 0.52 × Alcohol_consumption + 0.18 × Polio + 1.75×10
 - **Q-Q Residuals** — closely follows the normal line, confirmed with Shapiro-Wilk test (p = 0.346)
 - **Scale-Location** — roughly constant spread, confirmed with Breusch-Pagan test (p = 0.851, homoskedasticity holds)
 - **Residuals vs. Leverage** — four points (rows 12, 48, 49, 63) exceed the Cook's distance threshold but don't meaningfully distort the model
+
+Looking at the residual histogram and Cook's distance individually confirms the same picture — residuals are roughly bell-shaped around zero, and only rows 12, 49, and 63 stand out as having any real influence:
+
+![Residual histogram and Cook's distance](images/cooks-distance-diagnostics.png)
 
 As a final cross-check, the model was re-fitted using robust regression (`rlm()`) and heteroskedasticity-consistent standard errors (`lm_robust()`), both producing nearly identical coefficients and significance levels to the OLS model — confirming the model is robust to outlier influence and non-normal errors.
 
